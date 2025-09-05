@@ -16,6 +16,11 @@ These projects are built using **HTML**, **CSS**, and **JavaScript** without any
 ---
 
 ## 🛠 Tech Stack
+<p align="center">
+  <a href="https://skillicons.dev">
+    <img src="https://skillicons.dev/icons?i=html,css,javascript" />
+  </a>
+</p>
 
 - **Languages:** HTML5, CSS3, JavaScript
 - **Tools:** No frameworks, no libraries
