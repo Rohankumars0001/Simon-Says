@@ -1,12 +1,6 @@
-const mongoose = require("mongoose");
-
-mongoose
-  .connect("mongodb://localhost:27017/")
-  .then(() => console.log("Connected!"));
-
 let gameSeq = [];
 let userSeq = [];
-let btns = ["yellow", "red", "purple", "green"]; // array of btn classes
+let btns = ["yellow", "red", "white", "blue"]; // array of btn classes
 
 let started = false;
 let level = 0;
@@ -128,8 +122,6 @@ function levelUp() {
     // After flashing, tell user it's their turn
     setTimeout(() => showMessage("Your turn! Repeat the sequence"), 600);
   }, 500);
-
-  console.log("Game sequence:", gameSeq);
 }
 
 function checkAns(idx) {
