@@ -8,8 +8,8 @@ body {
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: radial-gradient(circle at top, #0a1a2f, #000); /* Deep Navy */
-  color: #f8f4e3; /* Ivory */
+  background: radial-gradient(circle at top, #0a1a2f, #000);
+  color: #f8f4e3;
   overflow: hidden;
   text-align: center;
   position: relative;
@@ -19,7 +19,7 @@ body {
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
-  color: #d4af37; /* Gold */
+  color: #d4af37;
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
 }
 
@@ -28,25 +28,24 @@ h2 {
   margin-bottom: 20px;
   padding: 5px 15px;
   border-radius: 20px;
-  background: rgba(248, 244, 227, 0.08); /* Ivory glow */
-  border: 1px solid rgba(212, 175, 55, 0.4); /* Gold border */
+  background: rgba(248, 244, 227, 0.08);
+  border: 1px solid rgba(212, 175, 55, 0.4);
   color: #f8f4e3;
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
-/* Message / Instructions */
+/* Message */
 #message {
   margin-bottom: 25px;
   font-size: 1.1rem;
   font-weight: bold;
-  color: #d4af37; /* Gold */
+  color: #d4af37;
   text-shadow: 0 0 10px rgba(212, 175, 55, 0.8);
   min-height: 20px;
 }
 #message.attention {
   animation: pulse 1s infinite alternate;
 }
-
 @keyframes pulse {
   0% {
     text-shadow: 0 0 5px #d4af37, 0 0 15px rgba(212, 175, 55, 0.5);
@@ -65,7 +64,7 @@ h2 {
   padding: 40px;
   border-radius: 30px;
   box-shadow: 0 0 25px rgba(128, 0, 32, 0.3),
-    /* Burgundy glow */ inset 0 0 20px rgba(248, 244, 227, 0.05);
+    inset 0 0 20px rgba(248, 244, 227, 0.05);
 }
 
 /* Buttons */
@@ -82,33 +81,32 @@ h2 {
   transition: all 0.25s ease;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.5);
   user-select: none;
-  color: #f8f4e3; /* Ivory text */
+  color: #f8f4e3;
 }
 
-/* Button themes using royal palette */
 .red {
-  background: linear-gradient(145deg, #800020, #5a0016); /* Burgundy */
+  background: linear-gradient(145deg, #800020, #5a0016);
 }
 .yellow {
-  background: linear-gradient(145deg, #d4af37, #b8860b); /* Gold */
+  background: linear-gradient(145deg, #d4af37, #b8860b);
 }
-.green {
-  background: linear-gradient(145deg, #0a1a2f, #13293d); /* Deep Navy */
+.blue {
+  background: linear-gradient(145deg, #0a1a2f, #13293d);
 }
-.purple {
-  background: linear-gradient(145deg, #f8f4e3, #e0dac4); /* Ivory */
+.white {
+  background: linear-gradient(145deg, #f8f4e3, #e0dac4);
   color: #0a1a2f;
 }
 
 .btn:hover {
   transform: scale(1.08);
-  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6); /* Gold glow */
+  box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
 }
 .btn:active,
 .userFlash {
   transform: scale(1.15);
   filter: brightness(1.2);
-  box-shadow: 0 0 35px rgba(128, 0, 32, 0.8); /* Burgundy glow */
+  box-shadow: 0 0 35px rgba(128, 0, 32, 0.8);
 }
 .flash {
   filter: brightness(1.4);
@@ -117,7 +115,7 @@ h2 {
   transition: 0.2s;
 }
 
-/* Floating background orbs */
+/* Background orbs */
 body::before,
 body::after {
   content: "";
@@ -138,7 +136,6 @@ body::after {
   right: -100px;
   animation-delay: 4s;
 }
-
 @keyframes float {
   0% {
     transform: translate(0, 0);
@@ -148,7 +145,6 @@ body::after {
   }
 }
 
-/* ===================== RESPONSIVE SMALL SCREENS ===================== */
 @media (max-width: 480px) {
   html,
   body {
@@ -156,9 +152,60 @@ body::after {
     width: 100%;
     overflow: hidden;
   }
-
   body::before,
   body::after {
     background: radial-gradient(circle, rgba(128, 0, 32, 0.15), transparent);
   }
+}
+
+/* Navbar */
+.custom-navbar {
+  width: 100%;
+  background: rgba(8, 12, 20, 0.5); /* 50% transparent */
+  backdrop-filter: blur(8px);
+  border-radius: 0;
+  padding: 0.6rem 1rem;
+  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4); /* make shadow lighter too */
+  z-index: 1100;
+}
+
+.custom-navbar .navbar-brand {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #e6b200 !important;
+  text-shadow: 0 2px 10px rgba(230, 178, 0, 0.25);
+}
+.custom-navbar .nav-link {
+  color: #dcdfe4 !important;
+  font-weight: 500;
+  margin: 0 6px;
+  transition: color 200ms ease, text-shadow 200ms ease;
+}
+.custom-navbar .nav-link:hover,
+.custom-navbar .nav-link.active {
+  color: #e6b200 !important;
+  text-shadow: 0 0 8px rgba(230, 178, 0, 0.65);
+}
+.custom-navbar .dropdown-menu {
+  background: rgba(12, 16, 24, 0.98) !important;
+  border: 0;
+  border-radius: 8px;
+  box-shadow: 0 8px 30px rgba(0, 0, 0, 0.6);
+}
+.custom-navbar .dropdown-item {
+  color: #e6e6e6 !important;
+}
+.custom-navbar .dropdown-item:hover {
+  background: #e6b200 !important;
+  color: #111 !important;
+  font-weight: 600;
+}
+.custom-navbar .navbar-toggler {
+  border: none;
+}
+.custom-navbar .navbar-toggler-icon {
+  background-image: url("data:image/svg+xml;utf8,\
+  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'>\
+  <path stroke='rgba(230,230,230,0.95)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/>\
+  </svg>") !important;
 }

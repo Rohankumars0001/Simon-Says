@@ -1,66 +1,69 @@
-/* Full page dark background with subtle gradient */
-body {
-  height: 100vh;
-  margin: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  background: radial-gradient(circle at top left, #1a1a2e, #0f0f1f);
-  font-family: "Poppins", sans-serif;
-  color: #fff;
+/* Outer modal (semi-transparent background) */
+.modal-content {
+  background: rgba(15, 15, 30, 0.7); /* transparent outer */
+  border-radius: 16px;
+  border: none;
+  padding: 10px;
+  box-shadow: 0 0 25px rgba(241, 196, 15, 0.3);
 }
 
-/* Centered, semi-transparent login form */
-form {
-  background: rgba(30, 30, 50, 0.8); /* dark transparent */
-  padding: 40px;
-  border-radius: 20px;
-  box-shadow: 0 0 20px rgba(255, 255, 255, 0.1);
-  width: 100%;
-  max-width: 400px;
-  text-align: center;
+/* Inner solid box */
+.modal-body {
+  background: #1c1c2e; /* solid dark */
+  border-radius: 12px;
+  padding: 20px;
 }
 
-/* Input fields styling */
-form .form-control {
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
+/* Header */
+.modal-header {
+  border-bottom: none;
+  color: #f1c40f;
+  font-weight: 600;
+  padding-bottom: 0;
+}
+
+/* Form labels and inputs */
+.modal-body .form-label {
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: #f8f4e3;
+}
+
+.modal-body .form-control {
+  background: #2a2a40;
+  border: 1px solid rgba(255, 255, 255, 0.15);
   border-radius: 10px;
   color: #fff;
-  padding: 10px 15px;
-  margin-bottom: 15px;
+  padding: 8px 12px;
+  margin-bottom: 12px;
+  font-size: 0.9rem;
 }
 
-form .form-control:focus {
-  border-color: #f1c40f; /* neon yellow */
-  box-shadow: 0 0 8px #f1c40f;
-  background: rgba(255, 255, 255, 0.1);
-  color: #fff;
+.modal-body .form-control:focus {
+  border-color: #f1c40f;
+  box-shadow: 0 0 8px rgba(241, 196, 15, 0.7);
+  background: #2f2f45;
 }
 
-/* Labels styling */
-form .form-label {
-  margin-bottom: 5px;
-  font-weight: 500;
-}
-
-/* Checkbox label */
-form .form-check-label {
-  color: #ccc;
-}
-
-/* Submit button styling */
-form .btn-primary {
-  background-color: #f1c40f;
+/* Yellow Login button */
+.modal-body .btn-login {
+  background: linear-gradient(135deg, #f1c40f, #e0b70d);
   border: none;
   border-radius: 10px;
-  padding: 10px 20px;
+  padding: 8px 20px;
   font-weight: 600;
   color: #1a1a2e;
-  transition: all 0.3s ease;
+  letter-spacing: 0.5px;
+  transition: 0.3s ease;
+  width: 100%;
+  max-width: 160px;
+  margin: 12px auto 0;
+  display: block;
+  font-size: 0.95rem;
 }
 
-form .btn-primary:hover {
-  background-color: #e0b70d;
-  box-shadow: 0 0 15px #f1c40f;
+.modal-body .btn-login:hover {
+  background: linear-gradient(135deg, #ffd633, #f1c40f);
+  box-shadow: 0 0 14px rgba(241, 196, 15, 0.9);
+  transform: scale(1.05);
 }
