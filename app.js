@@ -54,32 +54,67 @@ app.use(express.static(path.join(__dirname, "public")));
 
 // Routes
 app.get("/", (req, res) => {
-  res.render("index"); // index.ejs should include the game logic script
+  const currUser = req.user || null;
+  res.render("index", { currUser });
 });
-
-// app.get("/login", (req, res) => {
-//   res.render("login");
-// });
-
+//login-------old user
 app.get("/login", (req, res) => {
   res.render("login");
 });
 
-// Signup route
-app.get("/signup", async (req, res, next) => {
-  try {
-    let { username, email, password } = req.body;
-    const newUser = new User({ email, username });
-    const registeredUser = await User.register(newUser, password);
-    console.log(registeredUser);
-    req.login(registeredUser, (err) => {
+app.post("/login", (req, res, next) => {
+  passport.authenticate("local", (err, user, info) => {
+    if (err) return res.send(err);
+    if (!user) {
+      // Authentication failed
+      return res.redirect("/login");
+    }
+    req.login(user, (err) => {
       if (err) return next(err);
       console.log("success", "Welcome to Simon Says!");
       res.redirect("/");
     });
+  })(req, res);
+});
+//signup--------new User
+app.get("/signup", async (req, res) => {
+  res.render("signup");
+});
+
+app.post("/signup", async (req, res) => {
+  try {
+    let { username, email, password } = req.body;
+    const newUser = new User({ username, email });
+    const registeredUser = await User.register(newUser, password);
+    req.login(registeredUser, (err) => {
+      if (err) {
+        next(err);
+      } else {
+        console.log("jumped and logged!");
+      }
+      res.redirect("/");
+    });
   } catch (err) {
-    console.log(err.message);
+    res.send(err);
   }
+});
+//logout
+app.get("/logout", async (req, res) => {
+  try {
+    req.logout((err) => {
+      if (err) {
+        return next(err);
+      }
+      res.redirect("/");
+    });
+  } catch (err) {
+    res.send(err);
+  }
+});
+
+//profile---view
+app.get("/profile", async (req, res) => {
+  res.render("profile");
 });
 
 // Start server

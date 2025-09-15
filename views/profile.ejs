@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Player Profile — Full Template</title>
+    <meta
+      name="description"
+      content="Player profile page with basic features, stats, progress, settings, and social options."
+    />
+    <link rel="stylesheet" href="/profile.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <!-- Basic Info -->
+      <section class="profile">
+        <div class="avatar">
+          <img
+            src="https://api.dicebear.com/6.x/identicon/svg?seed=player123"
+            alt="avatar"
+          />
+        </div>
+
+        <div class="usermeta">
+          <div style="display: flex; align-items: center; gap: 12px">
+            <div style="min-width: 0">
+              <h1>Player123</h1>
+              <div style="color: var(--muted); font-size: 0.95rem">
+                Member since <strong>Jan 2024</strong>
+              </div>
+            </div>
+            <div class="actions">
+              <a class="btn btn-primary" href="#edit">Edit Profile</a>
+            </div>
+          </div>
+
+          <!-- Game Stats -->
+          <div class="stats">
+            <div class="stat"><strong>2,300</strong> Games Played</div>
+            <div class="stat"><strong>1,650</strong> High Score</div>
+            <div class="stat"><strong>72%</strong> Win Rate</div>
+            <div class="stat"><strong>15</strong> Longest Streak</div>
+          </div>
+
+          <!-- Progress -->
+          <div style="margin-top: 8px; max-width: 420px">
+            <div style="font-size: 0.9rem; color: var(--muted)">Level 27</div>
+            <div class="xp-bar"><div class="xp-fill"></div></div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Other sections -->
+      <div class="grid-two">
+        <!-- Activity -->
+        <div class="card">
+          <h3 style="margin: 0 0 10px">Recent Activity</h3>
+          <ul class="recent">
+            <li>Won a match in Arena — 2h ago</li>
+            <li>Unlocked achievement: First Win — Yesterday</li>
+            <li>Played 10 Times — 3 days ago</li>
+          </ul>
+        </div>
+
+        <!-- Achievements -->
+        <aside class="card">
+          <h3 style="margin: 0 0 10px">Achievements</h3>
+          <div class="ach-list">
+            <div class="ach">First Win</div>
+            <div class="ach">Played 10 Times</div>
+            <div class="ach">Sharp Shooter</div>
+            <div class="ach">Survivor</div>
+          </div>
+        </aside>
+      </div>
+
+      <!-- Settings -->
+      <div class="card" style="margin-top: 18px">
+        <h3 style="margin: 0 0 10px">Settings & Preferences</h3>
+        <div class="settings">
+          <label>Sound <input type="checkbox" checked /></label>
+          <label
+            >Theme
+            <select>
+              <option>Dark</option>
+              <option>Light</option>
+            </select>
+          </label>
+          <label
+            >Language
+            <select>
+              <option>English</option>
+              <option>Spanish</option>
+            </select>
+          </label>
+        </div>
+      </div>
+
+      <!-- Social -->
+      <div class="card" style="margin-top: 18px">
+        <h3 style="margin: 0 0 10px">Social</h3>
+        <p style="font-size: 0.9rem; color: var(--muted)">
+          Friend Code: <strong>ABC123XYZ</strong>
+        </p>
+        <a href="#leaderboard" class="btn btn-ghost">View Leaderboard</a>
+      </div>
+    </div>
+  </body>
+</html>

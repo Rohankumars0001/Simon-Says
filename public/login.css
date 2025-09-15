@@ -86,7 +86,7 @@ body {
   box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
 }
 
-/* Static Red Orbs in Background */
+/* Floating Red Orbs with Faded Borders */
 .login-page::before,
 .login-page::after {
   content: "";
@@ -94,18 +94,44 @@ body {
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 59, 59, 0.25), transparent);
+  background: radial-gradient(
+    circle,
+    rgba(255, 59, 59, 0.35) 0%,
+    /* center more solid */ rgba(255, 59, 59, 0.15) 60%,
+    /* softer middle */ rgba(255, 59, 59, 0) 100% /* fully faded edge */
+  );
   z-index: 1;
+  animation: float 12s ease-in-out infinite;
 }
 
 .login-page::before {
   top: -120px;
   left: -120px;
+  animation-delay: 0s;
 }
 
 .login-page::after {
   bottom: -120px;
   right: -120px;
+  animation-delay: 6s;
+}
+
+@keyframes float {
+  0% {
+    transform: translate(0, 0);
+  }
+  25% {
+    transform: translate(30px, -50px);
+  }
+  50% {
+    transform: translate(0, -30px);
+  }
+  75% {
+    transform: translate(-30px, -50px);
+  }
+  100% {
+    transform: translate(0, 0);
+  }
 }
 
 /* Responsive */
