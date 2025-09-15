@@ -1,3 +1,15 @@
+/* Global */
+html,
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Poppins", sans-serif;
+  background: linear-gradient(160deg, #0a0f1c, #000000);
+  color: #e0e0e0;
+  height: 100%;
+  overflow: hidden; /* 🚀 hide both scrollbars */
+}
+
 /* Login Page Wrapper */
 .login-page {
   display: flex;
@@ -5,37 +17,26 @@
   justify-content: center;
   height: 100vh;
   width: 100vw;
-  background: linear-gradient(160deg, #0a0f1c, #000000);
-  font-family: "Poppins", sans-serif;
-  color: #e0e0e0;
-  overflow: hidden; /* prevent any overflow */
-  position: relative; /* needed for background orbs */
+  background: transparent;
+  position: relative;
+  text-align: center;
+  overflow: hidden; /* 🚀 clip glowing orbs */
 }
 
-/* Floating Login Box */
+/* Login Box */
 .login-box {
-  background: rgba(20, 20, 40, 0.85); /* deep navy overlay */
+  background: transparent; /* same as game */
   padding: 40px 30px;
   border-radius: 16px;
-  box-shadow: 0 0 25px rgba(0, 255, 255, 0.1),
-    inset 0 0 15px rgba(255, 255, 255, 0.05);
-  width: 320px;
   text-align: center;
-  backdrop-filter: blur(8px);
-  transition: 0.3s ease;
   z-index: 10;
 }
 
-.login-box:hover {
-  box-shadow: 0 0 35px rgba(0, 255, 255, 0.3),
-    inset 0 0 20px rgba(255, 255, 255, 0.1);
-}
-
-/* Heading */
+/* Heading - Match Simon Says Game Title */
 .login-heading {
-  font-size: 2rem;
-  color: #ffffff;
-  text-shadow: 0 0 12px rgba(0, 255, 255, 0.6);
+  font-size: 2.5rem;
+  color: #ffd700;
+  text-shadow: 0 0 20px rgba(255, 215, 0, 0.8);
   margin-bottom: 25px;
   font-weight: 700;
 }
@@ -48,21 +49,9 @@
 }
 
 /* Fields */
-.login-field {
-  display: flex;
-  flex-direction: column;
-  text-align: left;
-}
-
-.login-label {
-  margin-bottom: 5px;
-  font-size: 0.9rem;
-  color: #cccccc;
-}
-
 .login-input {
   padding: 10px 12px;
-  border-radius: 10px;
+  border-radius: 8px;
   border: 1px solid rgba(255, 255, 255, 0.2);
   background: rgba(255, 255, 255, 0.05);
   color: #ffffff;
@@ -72,41 +61,32 @@
 }
 
 .login-input:focus {
-  border-color: #00ffff;
-  box-shadow: 0 0 10px rgba(0, 255, 255, 0.5);
+  border-color: #ffd700;
+  box-shadow: 0 0 10px rgba(255, 215, 0, 0.6);
   background: rgba(255, 255, 255, 0.1);
 }
 
-/* Submit Button */
+/* Submit Button - Match GAME OVER button */
 .login-button {
-  padding: 10px;
-  border-radius: 10px;
-  background: linear-gradient(135deg, #ff3b3b, #ffcc00);
-  border: none;
+  margin-top: 15px;
+  padding: 10px 25px;
+  border-radius: 20px; /* oval shape */
+  background: transparent;
+  border: 1px solid #ffd700;
   font-size: 1rem;
   font-weight: 600;
-  color: #000000;
+  color: #ffd700;
   cursor: pointer;
   transition: 0.3s ease;
-  animation: floatButton 2s infinite alternate; /* floating animation */
-}
-
-@keyframes floatButton {
-  0% {
-    transform: translateY(0);
-  }
-  100% {
-    transform: translateY(-6px);
-  }
+  box-shadow: 0 0 6px rgba(255, 215, 0, 0.4);
 }
 
 .login-button:hover {
-  background: linear-gradient(135deg, #ffcc00, #ff3b3b);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.4);
-  transform: scale(1.05);
+  background: rgba(255, 215, 0, 0.1);
+  box-shadow: 0 0 15px rgba(255, 215, 0, 0.8);
 }
 
-/* Red floating background orbs */
+/* Static Red Orbs in Background */
 .login-page::before,
 .login-page::after {
   content: "";
@@ -114,29 +94,18 @@
   width: 400px;
   height: 400px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(255, 59, 59, 0.3), transparent);
-  animation: floatRedOrb 8s infinite alternate ease-in-out;
+  background: radial-gradient(circle, rgba(255, 59, 59, 0.25), transparent);
   z-index: 1;
 }
 
 .login-page::before {
-  top: -100px;
-  left: -100px;
+  top: -120px;
+  left: -120px;
 }
 
 .login-page::after {
-  bottom: -100px;
-  right: -100px;
-  animation-delay: 4s;
-}
-
-@keyframes floatRedOrb {
-  0% {
-    transform: translate(0, 0);
-  }
-  100% {
-    transform: translate(40px, 60px);
-  }
+  bottom: -120px;
+  right: -120px;
 }
 
 /* Responsive */

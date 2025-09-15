@@ -13,16 +13,13 @@ body {
   overflow: hidden;
   text-align: center;
   position: relative;
-}
-
-/* Title */
+} /* Title */
 h1 {
   font-size: 3rem;
   margin-bottom: 10px;
   color: #d4af37;
   text-shadow: 0 0 15px rgba(212, 175, 55, 0.7);
 }
-
 h2 {
   font-size: 1rem;
   margin-bottom: 20px;
@@ -32,9 +29,7 @@ h2 {
   border: 1px solid rgba(212, 175, 55, 0.4);
   color: #f8f4e3;
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
-}
-
-/* Message */
+} /* Message */
 #message {
   margin-bottom: 25px;
   font-size: 1.1rem;
@@ -53,9 +48,7 @@ h2 {
   100% {
     text-shadow: 0 0 15px #d4af37, 0 0 30px rgba(212, 175, 55, 0.9);
   }
-}
-
-/* Game board */
+} /* Game board */
 .btn-con {
   display: grid;
   grid-template-columns: repeat(2, 160px);
@@ -65,9 +58,7 @@ h2 {
   border-radius: 30px;
   box-shadow: 0 0 25px rgba(128, 0, 32, 0.3),
     inset 0 0 20px rgba(248, 244, 227, 0.05);
-}
-
-/* Buttons */
+} /* Buttons */
 .btn {
   width: 160px;
   height: 160px;
@@ -83,7 +74,6 @@ h2 {
   user-select: none;
   color: #f8f4e3;
 }
-
 .red {
   background: linear-gradient(145deg, #800020, #5a0016);
 }
@@ -97,7 +87,6 @@ h2 {
   background: linear-gradient(145deg, #f8f4e3, #e0dac4);
   color: #0a1a2f;
 }
-
 .btn:hover {
   transform: scale(1.08);
   box-shadow: 0 0 25px rgba(212, 175, 55, 0.6);
@@ -113,9 +102,7 @@ h2 {
   transform: scale(1.2);
   box-shadow: 0 0 40px rgba(212, 175, 55, 0.9);
   transition: 0.2s;
-}
-
-/* Background orbs */
+} /* Background orbs */
 body::before,
 body::after {
   content: "";
@@ -144,7 +131,6 @@ body::after {
     transform: translate(40px, 60px);
   }
 }
-
 @media (max-width: 480px) {
   html,
   body {
@@ -156,9 +142,7 @@ body::after {
   body::after {
     background: radial-gradient(circle, rgba(128, 0, 32, 0.15), transparent);
   }
-}
-
-/* Navbar */
+} /* Navbar */
 .custom-navbar {
   width: 100%;
   background: rgba(8, 12, 20, 0.5); /* 50% transparent */
@@ -168,7 +152,6 @@ body::after {
   box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4); /* make shadow lighter too */
   z-index: 1100;
 }
-
 .custom-navbar .navbar-brand {
   font-size: 1.25rem;
   font-weight: 700;
@@ -204,8 +187,5 @@ body::after {
   border: none;
 }
 .custom-navbar .navbar-toggler-icon {
-  background-image: url("data:image/svg+xml;utf8,\
-  <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'>\
-  <path stroke='rgba(230,230,230,0.95)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/>\
-  </svg>") !important;
+  background-image: url("data:image/svg+xml;utf8,\ <svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'>\ <path stroke='rgba(230,230,230,0.95)' stroke-width='2' stroke-linecap='round' d='M4 7h22M4 15h22M4 23h22'/>\ </svg>") !important;
 }

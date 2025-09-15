@@ -66,7 +66,7 @@ app.get("/login", (req, res) => {
 });
 
 // Signup route
-app.post("/signup", async (req, res, next) => {
+app.get("/signup", async (req, res, next) => {
   try {
     let { username, email, password } = req.body;
     const newUser = new User({ email, username });
